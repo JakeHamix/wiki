@@ -85,7 +85,8 @@ module.exports = {
         'privateNS',
         'contentType',
         'createdAt',
-        'updatedAt'
+        'updatedAt',
+        'render'
       ])
         .withGraphJoined('tags')
         .modifyGraph('tags', builder => {

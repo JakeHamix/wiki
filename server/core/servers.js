@@ -122,6 +122,8 @@ module.exports = {
     const graphqlSchema = require('../graph')
     this.servers.graph = new ApolloServer({
       ...graphqlSchema,
+      playground: true,
+      introspection: true,
       context: ({ req, res }) => ({ req, res }),
       subscriptions: {
         onConnect: (connectionParams, webSocket) => {

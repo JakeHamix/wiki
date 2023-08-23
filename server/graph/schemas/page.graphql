@@ -37,9 +37,10 @@ type PageQuery {
     orderBy: PageOrderBy
     orderByDirection: PageOrderByDirection
     tags: [String!]
-    locale: String
+    locale: String,
     creatorId: Int
     authorId: Int
+    render: String,
   ): [PageListItem!]! @auth(requires: ["manage:system", "read:pages"])
 
   single(
@@ -280,7 +281,8 @@ type PageListItem {
   privateNS: String
   createdAt: Date!
   updatedAt: Date!
-  tags: [String]
+  tags: [String],
+  render: String,
 }
 
 type PageTreeItem {
